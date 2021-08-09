@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="ClassCombine" thread-count ="2" parallel ="tests">
+  <test  name="Test Blocks Practise- Block 1" verbose="2">
+    <parameter name = "browser" value="chrome"/>
+    <parameter name = "urlLogin" value="https://demo.opencart.com/index.php?route=account/login"/>
+    <parameter name = "username" value="e2e26iosde@gmail.com"/>
+    <parameter name = "password" value="Testgma@1"/>
+    
+    <classes>
+    
+      <class name="com.tests.LoginTest"/>
+ 
+    </classes>
+  </test> 
+  
+  <test  name="Test Blocks Practise- Block 2" verbose="2">
+    <parameter name = "browser" value="chrome"/>
+    <parameter name = "urlRegister" value="https://demo.opencart.com/index.php?route=account/register"/>
+    <classes>
+      <class name="com.tests.SignUpPageTest">
+	      <methods>  
+	          <exclude name = "privacyPolicyDisplayed" /> 
+	          <exclude name = "continueButtonDisplayed" />  
+	      </methods>  
+	  </class>     
+    </classes>
+  </test> 
+  
+</suite> 
+         <!--   Here Test Blocks will run parallel  -->

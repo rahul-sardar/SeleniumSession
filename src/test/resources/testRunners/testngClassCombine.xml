@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="ClassCombine" >
+  <test  name="Combinining 2 class test" verbose="5">
+    <parameter name = "browser" value="chrome"/>
+    <parameter name = "urlLogin" value="https://demo.opencart.com/index.php?route=account/login"/>
+    <parameter name = "urlRegister" value="https://demo.opencart.com/index.php?route=account/register"/>
+    <parameter name = "username" value="e2e26iosde@gmail.com"/>
+    <parameter name = "password" value="Testgma@1"/>
+    <classes>
+      <class name="com.tests.LoginTest"/>
+      <class name="com.tests.SignUpPageTest"/>
+    </classes>
+  </test> 
+</suite> 
+            
+            
+<!--  What I have observed when i have given classes in order like below, then only priority=1 test cases are running in both classes
+            <class name="com.tests.SignUpPageTest"/>
+      <class name="com.tests.LoginTest"/>
+      But given in above order like according to order shown in package then all test cases are running -->

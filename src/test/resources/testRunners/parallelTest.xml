@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="ClassCombine" thread-count ="2" parallel ="tests">
+  <test  name="Test Blocks Practise- Block 1" verbose="2">
+    <classes>
+      <class name="com.tests.LoginTest"/>
+ 
+    </classes>
+  </test> 
+  
+  <test  name="Test Blocks Practise- Block 2" verbose="2">
+    <classes>
+      <class name="com.tests.SignUpPageTest"/>
+      
+    </classes>
+  </test> 
+  
+</suite> 
+         <!--   Here Test Blocks will run parallel  -->
