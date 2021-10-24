@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="RetryAnnotationTesting">
+
+	<listeners>
+		<listener class-name="ListeneresDemo.AnnotationTransformer" />
+	</listeners>
+	<test name="Test Blocks Practise- Retry Analyser" verbose="2">
+		<classes>
+			<class name="com.tests.RetryTest" />
+
+		</classes>
+	</test>
+
+</suite>
+<!-- Here Test Blocks will run sequentially -->

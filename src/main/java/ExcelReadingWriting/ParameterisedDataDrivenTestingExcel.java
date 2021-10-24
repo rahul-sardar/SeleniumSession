@@ -19,7 +19,7 @@ public class ParameterisedDataDrivenTestingExcel {
 				WebDriverManager.chromedriver().setup(); 
 				WebDriver driver = new ChromeDriver();
 				//driver.get("https://demo.opencart.com/index.php?route=account/register");
-				driver.get("https://www.facebook.com/");
+				driver.get("https://en-gb.facebook.com/");
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.findElement(By.linkText("Create New Account")).click();
 				

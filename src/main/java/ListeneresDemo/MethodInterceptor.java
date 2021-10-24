@@ -42,7 +42,7 @@ public class MethodInterceptor implements IMethodInterceptor {
 		return result;
 	}
 
-	
-	
+	//now after creating this class to use it add in in .xml as a listener tag
+	//priority enabled adding descrition can be done during runtime using this above concept
 	
 }
