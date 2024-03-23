@@ -91,3 +91,32 @@ public class SoftAssertionExample {
 	}
 
 }
+
+/*
+ * 
+ * 
+In TestNG, hard assertions and soft assertions are used to validate expected outcomes in test cases, 
+but they differ in how they handle test failures and continue the execution of subsequent assertions or test steps.
+
+Hard Assertion in TestNG:
+Definition: Hard assertions in TestNG are provided by the Assert class. They are traditional assertions 
+that immediately stop the test execution when they fail by throwing an exception (typically AssertionError).
+Behavior: When a hard assertion fails, TestNG marks the test as failed and stops executing further assertions 
+or test steps within the same test method.
+
+Usage:
+Hard assertions are suitable for critical validations where failure indicates a serious issue in the test scenario 
+or the application under test.
+They are commonly used for validations that are essential for the test case's success and where proceeding with the 
+test would be meaningless if the validation fails.
+
+Soft Assertion in TestNG:
+Definition: Soft assertions in TestNG are provided by the SoftAssert class or by using Assert with TestNG.assertAll() method. 
+They allow the execution of multiple assertions within a test method, even after one or more assertions fail.
+Behavior: With soft assertions, TestNG collects all assertion failures but continues executing subsequent assertions and 
+test steps. At the end of the test method, TestNG reports a summary of all assertion failures.
+Usage:
+Soft assertions are useful when you want to verify multiple conditions in a single test case and gather a comprehensive list of 
+failures rather than halting at the first encountered failure.
+They are beneficial in scenarios where you want to collect and report all validation issues before marking the test as failed.
+ */

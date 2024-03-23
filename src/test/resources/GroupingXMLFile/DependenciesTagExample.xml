@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="TestSuiteExample" verbose="5">
+<groups>
+<dependencies>
+		<group name="GroupA">
+			<method name="testMethod6" />
+		</group>
+		<group name="GroupB">
+			<method name="testMethod7" />
+		</group>
+
+		<depends-on-groups>
+			<!-- GroupB depends on GroupA -->
+			<group name="GroupB">
+				<depends-on-group name="GroupA" />
+			</group>
+		</depends-on-groups>
+		<!-- Define more dependencies if needed -->
+	</dependencies>
+</groups>
+
+	
+	<test name="TestExample">
+		<classes>
+			<class name="com.tests.DependencyExample">
+				<methods>
+					<include name="testMethod6" />
+					<include name="testMethod7" />
+					<!-- Other test methods -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+
+</suite>
+
+<!-- Not running fix is needed here. Fix this later -->

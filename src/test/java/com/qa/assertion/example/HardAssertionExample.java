@@ -11,46 +11,85 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
 public class HardAssertionExample {
 	
-	 WebDriver driver;
-	 
+	WebDriver driver;
+	
 
-	    @BeforeClass
-	    public void setUp() {
-	       
-	        driver = new ChromeDriver();
-	        driver.manage().window().maximize();
-	        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    }
+	@BeforeClass
+	public void setUp() {
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
-	    @Test
-	    public void testPageTitle() {
-	        String expectedTitle = "OrangeHRM";
-	        String actualTitle = driver.getTitle();
-	        Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match expected title.");
-	    }
-	    
-	    @Test
-	    public void testLoginPageElements() {
-	        WebElement usernameInput = driver.findElement(By.xpath("//input[@name='username']"));
-	        WebElement passwordInput = driver.findElement(By.xpath("//input[@name='password']"));
-	        WebElement loginButton = driver.findElement(By.xpath("//button[@type='submit']"));
+		// Login with credentials
+		WebElement emailInput = driver.findElement(By.id("input-email"));
+		WebElement passwordInput = driver.findElement(By.id("input-password"));
+		WebElement loginButton = driver.findElement(By.cssSelector("input[value='Login']"));
+		By editLink = By.linkText("Edit your account information");
 
-	        Assert.assertTrue(usernameInput.isDisplayed(), "Username input field is not displayed.");
-	        Assert.assertTrue(passwordInput.isDisplayed(), "Password input field is not displayed.");
-	        Assert.assertTrue(loginButton.isDisplayed(), "Login button is not displayed.");
-	    }
-	    
-	    
+		emailInput.sendKeys("testabc@yopmail.com");
+		passwordInput.sendKeys("12345");
+		loginButton.click();
+		driver.findElement(editLink).click();
+		
+	}
 
-	    @AfterClass
-	    public void tearDown() {
-	        if (driver != null) {
-	            driver.quit();
-	        }
-	    }
+	@Test(priority=1)
+	public void testEditAccountPageElements() throws InterruptedException {
+		Thread.sleep(5);
+		By firstNameInput = By.id("input-firstname");
+		By lastNameInput = By.id("input-lastname");
+		By emailInput = By.id("input-email");
+		By telephoneInput = By.id("input-telephone");
+		By continueButton = By.cssSelector("input[value='Continue']");
+		By firstNameErrorLocator = By.cssSelector("#input-firstname + .text-danger");
+		By lastNameErrorLocator = By.cssSelector("#input-lastname + .text-danger");
+		By emailErrorLocator = By.cssSelector("#input-email + .text-danger");
+		By telephoneErrorLocator = By.cssSelector("#input-telephone + .text-danger");
+		
+		driver.findElement(firstNameInput).clear();
+		driver.findElement(lastNameInput).clear();
+		driver.findElement(emailInput).clear();
+		driver.findElement(telephoneInput).clear();
+		driver.findElement(continueButton).click();
+		
+		
+		
+		
+
+		Assert.assertTrue(driver.findElement(firstNameInput).isDisplayed(), "First name input field is not displayed.");
+		Assert.assertTrue(driver.findElement(lastNameInput).isDisplayed(), "Last name input field is not displayed.");
+		Assert.assertTrue(driver.findElement(emailInput).isDisplayed(), "Email input field is not displayed.");
+		Assert.assertTrue(driver.findElement(telephoneInput).isDisplayed(), "Telephone input field is not displayed.");
+		Assert.assertTrue(driver.findElement(continueButton).isDisplayed(), "Continue button is not displayed.");
+		
+		Assert.assertEquals(driver.findElement(telephoneErrorLocator).getText().trim(), "");
+		Assert.assertEquals(driver.findElement(firstNameErrorLocator).getText().trim(), "");
+		Assert.assertEquals(driver.findElement(lastNameErrorLocator).getText().trim(), "");
+		Assert.assertEquals(driver.findElement(emailErrorLocator).getText().trim(), "");
+		
+	}
+
+	@Test(priority=2)
+	public void testEditAccountPageTitle() {
+		String expectedTitle = "My Account";
+		String actualTitle = driver.getTitle();
+		String expectedURL = "https://tutorialsninja.com/demo/index.php?route=account/editoo";
+		String actualURL = driver.getCurrentUrl();
+		Assert.assertEquals(actualTitle, expectedTitle, "Incorrect page title on edit account page.");
+		Assert.assertEquals(actualURL, expectedURL, "Incorrect URL on edit account page.");
+		
+	}
+
+	@AfterClass
+	public void tearDown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 	     
 
 }

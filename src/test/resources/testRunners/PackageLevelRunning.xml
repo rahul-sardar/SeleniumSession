@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="Test">
+		<packages>
+			<package name="com.qa.packagelevelrunning.example" />
+		</packages>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+<!-- The <packages> tag in TestNG XML files is used to specify the packages that contain your test classes. 
+This tag allows you to define multiple packages that TestNG should search for test classes to execute.
+
+When TestNG runs, it scans the specified packages for test classes (classes annotated with @Test annotations) 
+and executes them according to the configuration in the TestNG XML file.  -->
