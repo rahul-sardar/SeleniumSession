@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Enable disable test method Example">
+	<test name="LoginTest" enabled ="false">
+		<classes>
+			<class name="com.tests.LoginTestWithAnnotation">
+				<methods>
+					<include name="loginUser" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<test name="LoginTestNext" enabled ="false">
+		<classes>
+			<class name="com.tests.LoginTestWithAnnotation"/>
+		</classes>
+	</test>
+
+</suite>
+
+<!-- By default enable is true . so we can use this attribute to enable or disable test method inside test tag-->

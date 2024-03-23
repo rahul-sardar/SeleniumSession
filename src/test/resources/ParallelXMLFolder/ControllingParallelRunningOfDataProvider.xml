@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="ClassCombine" data-provider-thread-count="2">
+  <test  name="Test Blocks Practise- Block 1" verbose="2">
+    <classes>
+      <class name="com.qa.parallelexecution.example.ParallelExecutionFromDataProviderAnnotation"/>
+ 
+    </classes>
+  </test> 
+  
+</suite> 
+         

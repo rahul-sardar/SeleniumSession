@@ -50,7 +50,7 @@ public class LoginTestWithAnnotation {
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();  
-		driver.get("https://demo.opencart.com/index.php?route=account/login");
+		driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().window().maximize();	  
@@ -74,7 +74,7 @@ public class LoginTestWithAnnotation {
 
 	@Test(priority=3 /* ,enabled = false*/)
 	public void loginUser() {
-		driver.findElement(emailID).sendKeys("e2e26iosde@gmail.com");
+		driver.findElement(emailID).sendKeys("abcdef@yopmail.com");
 		driver.findElement(password).sendKeys("Testgma@1");
 		driver.findElement(loginButton).click();
 		String homePageHeader= driver.findElement(headerMyAccount).getText();

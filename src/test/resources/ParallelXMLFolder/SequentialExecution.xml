@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="SequentialRunExample">
+
+	<test name="RegisterTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoRegister" />
+		</classes>
+	</test>
+
+	<test name="LoginTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoLogin" />
+		</classes>
+	</test>
+
+	<test name="SearchTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoSearch" />
+		</classes>
+	</test>
+
+
+</suite>
+
+<!-- 
+One thread for all the test. Rest of the test need to wait for thread to get finished
+Here above first register test will run, next login test and then search test will run.
+-->
+
+<!-- Default Thread Count when only parallel attribute is specified is 5 
+What Happens when we specify parallel='tests' thread-count=1 >>>> Here there is only one thread
+so tests will run in sequential manner despite of parallel execution enabled 
+
+Can we give negative number as thread-count >> TestNg.xml file will take the number without any syntax error
+since its a xml file. but when we run this xml file, we will get IllegalArgumentException
+
+TestNG will create the specified number of threads but will only use them to execute the available tests. 
+For example, if you have three tests but set threadCount="5", TestNG will create five threads but will use only
+three threads to execute the three tests concurrently. The extra threads will remain idle as there are no additional tests to execute.
+-->
+
+

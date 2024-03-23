@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroupTestExample">
+
+	<test name="Test Blocks Practise- LoginTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoLogin" />
+			<methods>
+				<include name ="loginWithValidCredential"/>
+				<include name ="logibWithInvalidEmailandInvalidPassword"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- RegisterTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoRegister" />
+			<methods>
+				<include name ="registerByProvidingOnlyMandatoryFields"/>
+				<include name ="registerByProvidingAllFields"/>
+			</methods>
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- SearchTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoSearch" />
+			<methods>
+				<include name ="searchForAValidProduct"/>
+			</methods>
+		</classes>
+	</test>
+
+</suite>

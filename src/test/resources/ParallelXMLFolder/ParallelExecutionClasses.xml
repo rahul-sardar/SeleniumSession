@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Parallel Running of classes" parallel ="classes" thread-count ="3">
+
+	<test name="RegisterTest">
+	    
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoRegister" />
+			<class name="com.qa.parallelexecution.example.DemoLogin" />
+			<class name="com.qa.parallelexecution.example.DemoSearch" />
+		</classes>
+	</test>
+	
+
+</suite>
+
+
+
+<!-- This is also valid, we can give parallel attribute at test level also
+Whatever classes are present under test tag that will run parallel -->
+
+<!--<suite name="Parallel Running of classes" >
+
+	<test name="RegisterTest" parallel ="classes" thread-count ="3">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoRegister" />
+			<class name="com.qa.parallelexecution.example.DemoLogin" />
+			<class name="com.qa.parallelexecution.example.DemoSearch" />
+		</classes>
+	</test>
+	
+
+</suite> -->
+
+
+
+

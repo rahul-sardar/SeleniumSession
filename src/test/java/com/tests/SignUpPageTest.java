@@ -27,6 +27,8 @@ public class SignUpPageTest {
 	  @Parameters({"urlRegister" , "browser"})
 	  public void setup(String urlHere, String browser) throws Exception {
 		  System.out.println("Before Test ...SetUp method Running");
+		  System.out.println("Thread ID in " + getClass().getSimpleName() + ": " + Thread.currentThread().getId());
+
 		  if(browser.equalsIgnoreCase("chrome")) {
 			  WebDriverManager.chromedriver().setup();
 			  driver = new ChromeDriver();  
@@ -40,7 +42,8 @@ public class SignUpPageTest {
           driver.get(urlHere);
 		  driver.manage().deleteAllCookies();
 		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		  driver.manage().window().maximize();	  
+		  driver.manage().window().maximize();	
+		  
 	  }
 	  
 

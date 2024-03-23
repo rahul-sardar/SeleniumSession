@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroupTestExample">
+
+	
+	<test name="Test Blocks Practise- Running All Tests" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoLogin" />
+		</classes>
+	</test>
+
+</suite>

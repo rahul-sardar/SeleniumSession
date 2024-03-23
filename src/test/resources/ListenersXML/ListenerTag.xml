@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Listeners Example">
+	<listeners>
+		<listener class-name="com.listeners.example.MyListeners" />
+	</listeners>
+
+
+	<test name="RegisterTest">
+		<classes>
+			<class name="com.listeners.example.LoginTestCheckingListener" />
+		</classes>
+	</test>
+
+	<test name="LoginTest">
+		<classes>
+			<class name="com.listeners.example.RegisterCheckingListeners" />
+		</classes>
+	</test>
+
+	<test name="SearchTest">
+		<classes>
+			<class name="com.listeners.example.SearchCheckingListeners" />
+		</classes>
+	</test>  
+
+
+</suite>
+
+<!-- onStart method of the ItestListeners will be executed before <test> tag. It will
+be executed before each test tag
+
+onFinish method of the ItestListeners will be executed after <test> tag. It will
+be executed after each test tag 
+
+Annotations in TestNG:
+
+Annotations are like instructions or tags that you add to your test code to specify how TestNG should run your tests.
+They help you control the flow of test execution, set up preconditions, perform cleanup tasks, and more.
+
+@Test is an annotation that tells TestNG these are test methods.
+
+Listeners are like event handlers that listen for events during test execution, such as test start, test success, test failure, etc.
+You can create listener classes to perform custom actions based on these events, like logging, reporting, taking screenshots, etc
+When you run your tests, the listener will perform actions like printing messages when tests start (onTestStart) or fail (onTestFailure).
+
+In simple terms, annotations are tags that define how your tests should run, while listeners are event handlers that react to events during 
+test execution, allowing you to add custom behavior or actions.
+
+In the context of TestNG listeners, "events" refer to specific moments or occurrences during the test execution lifecycle. These events are 
+predefined points in time when TestNG triggers certain actions, and listeners can be used to capture and respond to these events. Each event 
+corresponds to a particular phase or action in the test execution process. Here are some common events in TestNG:
+
+Test Start (onTestStart):
+This event occurs when a test method starts executing.
+It allows listeners to perform actions or logging specific to the beginning of a test.
+
+Test Success (onTestSuccess):
+This event occurs when a test method successfully completes without any failures or errors.
+Listeners can perform actions such as logging success messages or capturing screenshots.
+
+Test Failure (onTestFailure):
+This event occurs when a test method fails due to an assertion failure or an exception.
+Listeners can handle test failures by logging error details, capturing screenshots, or performing cleanup actions.
+
+Test Skipped (onTestSkipped):
+This event occurs when a test method is skipped, usually due to dependencies or configuration issues.
+Listeners can handle skipped tests by logging messages or performing alternative actions.
+
+Test Finish (onTestFinish):
+This event occurs after a test method has finished executing, regardless of whether it passed, failed, or was skipped.
+Listeners can perform cleanup actions or finalize logging for the test method.
+
+Suite Start (onStart):
+This event occurs when a test suite starts executing.
+Listeners can perform setup actions or initialize resources specific to the entire suite.
+
+Suite Finish (onFinish):
+This event occurs after a test suite has finished executing all tests.
+Listeners can perform cleanup actions or finalize logging for the entire suite.
+
+These events represent key moments in the test execution lifecycle, allowing listeners to capture relevant information, 
+handle exceptions, generate reports, and perform custom actions based on the test outcomes. By implementing listener interfaces 
+and methods corresponding to these events, you can extend TestNG's functionality and tailor the test execution process according 
+to your requirements.
+
+
+
+
+
+-->
+
+
+
+
+
+
+
+
+
+
+

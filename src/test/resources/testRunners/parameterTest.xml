@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="ClassCombine" thread-count ="2" parallel ="tests">
+<suite name="ClassCombine" thread-count ="2" >
   <test  name="Test Blocks Practise- Block 1" verbose="2">
     <parameter name = "browser" value="chrome"/>
-    <parameter name = "urlLogin" value="https://demo.opencart.com/index.php?route=account/login"/>
-    <parameter name = "username" value="e2e26iosde@gmail.com"/>
+    <parameter name = "urlLogin" value="https://tutorialsninja.com/demo/index.php?route=account/login"/>
+    <parameter name = "username" value="abcdef@yopmail.com"/>
     <parameter name = "password" value="Testgma@1"/>
     
     <classes>
@@ -18,7 +18,7 @@
   
   <test  name="Test Blocks Practise- Block 2" verbose="2">
     <parameter name = "browser" value="chrome"/>
-    <parameter name = "urlRegister" value="https://demo.opencart.com/index.php?route=account/register"/>
+    <parameter name = "urlRegister" value="https://tutorialsninja.com/demo/index.php?route=account/register"/>
     <classes>
       <class name="com.tests.SignUpPageTest"/>
     </classes>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroupTestExample">
+	<groups>
+		<run>
+			<include name="smoke" />
+		</run>
+	</groups>
+
+	<test name="Test Blocks Practise- LoginTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoLogin" />
+
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- RegisterTest" verbose="2">
+		<groups>
+			<run>
+				<include name="sanity" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.groupingExample.DemoRegister" />
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- SearchTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoSearch" />
+		</classes>
+	</test>
+
+</suite>
+
+<!-- Here we are giving the group at test level, and suite level too. So For the register test sanity + smoke both the groups tag will run -->

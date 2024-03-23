@@ -1,5 +1,7 @@
 package SeleniumSessions;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +18,7 @@ public class ExplicitWait {
 		  driver.get("https://chercher.tech/practice/explicit-wait-sample-selenium-webdriver");
 			
 			
-		  WebDriverWait wait = new WebDriverWait(driver, 15);
+		  WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		  wait.until(ExpectedConditions.titleContains("ExplicitlyWait"));
 		  System.out.println(driver.getTitle());
 		
@@ -25,7 +27,7 @@ public class ExplicitWait {
 		
 		
 		  By hiddenButton = By.id("hidden"); 
-		  wait = new WebDriverWait(driver, 20);
+		  wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		  wait.until(ExpectedConditions.elementToBeClickable(hiddenButton));
 		  System.out.println(driver.findElement(By.xpath("//button[@id='hidden']")).getText());
 		  

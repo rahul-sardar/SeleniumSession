@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Multiple Test Tag with different parallel tags">
+	<test name="Test Blocks Practise- Block 1" parallel="classes" thread-count="2">
+		<classes>
+			<class name="com.qa.parallelexecution.example.LoginTest" />
+			<class name="com.qa.parallelexecution.example.SignUpPageTest" />
+		</classes>
+	</test>
+	
+	<test name="Test Blocks Practise- Block 2">
+		<classes>
+			<class name="com.qa.parallelexecution.example.RegistrationEmailRegisterErrorTest" />
+			<class name="com.qa.parallelexecution.example.RegistrationPrivacyErrorTest" />
+		</classes>
+	</test>
+	
+	Here In test Block 2 we haven't written parallel tag so both the classes will run in sequential manner.
+	Both the class will be executed by same thread
+
+
+
+
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Parallel Running of classes" parallel ="classes" thread-count ="3">
+
+	<test name="RegisterTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoRegister" />
+			<class name="com.qa.parallelexecution.example.DemoLogin" />
+			<class name="com.qa.parallelexecution.example.DemoSearch" />
+		</classes>
+	</test>
+	
+	
+	
+
+</suite> 

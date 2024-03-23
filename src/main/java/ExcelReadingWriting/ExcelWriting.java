@@ -15,8 +15,10 @@ public class ExcelWriting {
 	public static void main(String[] args) throws IOException {
 		XSSFSheet sheet;
 		XSSFRow row = null;
-	    XSSFCell cell = null;
-		File src = new File("/Users/rahulmac/Downloads/SeleniumTestingData.xlsx");
+	    @SuppressWarnings("unused")
+		XSSFCell cell = null;
+	    String filePath= System.getProperty("user.dir") + "//Excel//EmployeesData.xlsx";
+		File src = new File(filePath);
 		FileInputStream fis = new FileInputStream(src);
 		
 		XSSFWorkbook wb = new XSSFWorkbook(fis);

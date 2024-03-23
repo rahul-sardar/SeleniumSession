@@ -31,6 +31,8 @@ public class LoginTest {
 	  @Parameters({"urlLogin", "browser"})
 	  public void setup(String url, String browserName) throws Exception {
 		  System.out.println("Before Test ...SetUp method Running");
+		  System.out.println("Thread ID in " + getClass().getSimpleName() + ": " + Thread.currentThread().getId());
+
 		  if(browserName.equalsIgnoreCase("chrome")) {
 			  WebDriverManager.chromedriver().setup();
 			  driver = new ChromeDriver();  
@@ -45,6 +47,7 @@ public class LoginTest {
 		  driver.manage().deleteAllCookies();
 		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		  driver.manage().window().maximize();	  
+		  System.out.println("registerByProvidingAllFields - DemoRegister -->" + Thread.currentThread().getId());
 	  }
 	  
 	  @Test(priority = 1)
@@ -59,8 +62,7 @@ public class LoginTest {
 		  System.out.println("Test Method 2");
 		  String title = driver.getTitle();
 		  System.out.println("Page Title is: "+title);
-		  Assert.assertEquals(title, "Account Login");
-		  
+		  Assert.assertEquals(title, "Account Login");  
 	  }
 	  
 	  @Test(priority=3)
@@ -80,10 +82,6 @@ public class LoginTest {
 	 public void tearDown() {
 		  driver.close();
 	 }
-	
-	
-	
-	
-	
+		
 	
 }

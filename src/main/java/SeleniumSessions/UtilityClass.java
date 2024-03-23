@@ -67,27 +67,27 @@ public class UtilityClass {
 	 * @return
 	 */
 	public WebElement waitforpresenceofelement(By locator, int timeout) {
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
         return getElement(locator); //It will return weblelement for that particular locator
 	}
 	
 	public String waitforpresenceoftitle(String title, int timeout) {
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         wait.until(ExpectedConditions.titleIs(title));
         return driver.getTitle(); //It will return weblelement for that particular locator
 	}
 	
 	public WebElement waitforelementtobeclickable(By locator, int timeout) {
 		WebElement element= getElement(locator);
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
          
 	}
 	
 	public WebElement waitforelementtobevisible(By locator, int timeout) {
 		WebElement element= getElement(locator);
-		WebDriverWait wait = new WebDriverWait(driver, timeout);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
          
 	}

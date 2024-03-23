@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroupTestExample">
+	<groups>
+		<run>
+			<include name="windows.smoke" />
+			<include name="windows.sanity" />
+			<!-- linux.* To include all the 'subcategory' of the linux -->
+			<!-- windows.* To include all the 'subcategory' of the windows -->
+		</run>
+	</groups>
+
+	<test name="Test Blocks Practise- LoginTest" verbose="2">
+		<classes>
+			<class
+				name="com.qa.groupingExample.SubCategoryGroupExampleDemoLogin" />
+
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- RegisterTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoRegister" />
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- SearchTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoSearch" />
+		</classes>
+	</test>
+
+</suite>
+
+<!-- Here we are giving the group at test level, we can provide the group 
+	tag at suite level too When we provide the group tag at test level then grouping 
+	will be applied to all the classes present under classes tag. -->

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroupTestExample">
+
+
+	<test name="Test Blocks Practise- LoginTest" verbose="2">
+		<groups>
+			<run>
+				<include name="login" />
+				<exclude name = 'smoke'/>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.groupingExample.DemoLogin" />
+
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- RegisterTest" verbose="2">
+		<groups>
+			<run>
+				<include name="smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.groupingExample.DemoRegister" />
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- SearchTest" verbose="2">
+		<groups>
+			<run>
+				<include name="smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.groupingExample.DemoSearch" />
+		</classes>
+	</test>
+
+</suite>
+
+<!-- Here we are giving the group at test level, we can provide the group tag at suite level too
+When we provide the group tag at test level then grouping will be applied to all the classes present under classes tag.
+  -->

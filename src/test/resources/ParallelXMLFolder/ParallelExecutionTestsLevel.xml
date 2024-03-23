@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="SequentialRunExample" parallel="tests" thread-count="2">
+	
+	<test name="RegisterTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoRegister" />
+		</classes>
+	</test>
+	
+	<test name="LoginTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoLogin" />
+		</classes>
+	</test>
+	
+	<test name="SearchTest">
+		<classes>
+			<class name="com.qa.parallelexecution.example.DemoSearch" />
+		</classes>
+	</test>
+	
+	
+</suite>
+
+
+
+<!-- parallel = "tests" , thread-count="2" Suite tag only. parallel="methods" means 
+	that TestNG will run test methods within a test class in parallel, and parallel="classes" 
+	means it will run test classes in parallel. The thread-count attribute specifies 
+	the maximum number of threads for each parallel execution mode.
+	
+	We can specify parallel attribute at Suite level - which applies parallelism to
+	all tests defined within that suite.
+	When you specify parallel="methods", parallel="tests", or parallel="classes" at the suite level, 
+	TestNG will apply that parallel execution mode to all the <test> tags within the suite. This means 
+	that all tests (or test methods/classes) within each <test> tag will be executed in parallel according 
+	to the specified mode.
+	
+	We can specify the parallel attribute at the individual test level, which allows 
+	us to control parallelism for each specific test.
+	At test level, parallel attribute have 2 value 
+	parallel="methods" , parallel = "classes"
+	
+	Now, If you give threadcount=3 then it means each test will have have one thread to execute
+	now next even if you try to increase the thread count to 5 then also in the output you will see
+	3 different thread id. reason parallism is at the test level
+	
+	 -->
+
+
+

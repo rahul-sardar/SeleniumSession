@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Screenshot Example">
+	<listeners>
+		<listener class-name="com.qa.screenshots.example.MyListeners" />
+	</listeners>
+
+
+	<test name="RegisterTest">
+		<classes>
+			<class name="com.qa.screenshots.example.Register" />
+		</classes>
+	</test>
+
+	<test name="LoginTest">
+		<classes>
+			<class name="com.qa.screenshots.example.login" />
+		</classes>
+	</test>
+
+</suite>

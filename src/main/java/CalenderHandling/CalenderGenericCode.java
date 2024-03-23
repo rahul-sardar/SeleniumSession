@@ -1,6 +1,7 @@
 package CalenderHandling;
 
 
+import java.time.Duration;
 import java.util.Calendar;
 
 
@@ -23,7 +24,7 @@ public class CalenderGenericCode {
 		driver.get("http://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html");
 		driver.findElement(By.id("datepicker")).click();
 		
-		new WebDriverWait(driver,10)
+		new WebDriverWait(driver,Duration.ofSeconds(10))
 		  .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-datepicker-calendar")));
 		
 	    selectDate("48", "June", "2000");

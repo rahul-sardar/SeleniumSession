@@ -5,9 +5,9 @@
 <suite name="ClassCombine" thread-count ="2" parallel ="tests">
   <test  name="Test Blocks Practise- Block 1" verbose="2">
     <parameter name = "browser" value="chrome"/>
-    <parameter name = "urlLogin" value="https://demo.opencart.com/index.php?route=account/login"/>
-    <parameter name = "username" value="e2e26iosde@gmail.com"/>
-    <parameter name = "password" value="Testgma@1"/>
+    <parameter name = "urlLogin" value="https://tutorialsninja.com/demo/index.php?route=account/login"/>
+    <parameter name = "username" value="testabc@yopmail.com"/>
+    <parameter name = "password" value="12345"/>
     
     <classes>
     
@@ -18,7 +18,7 @@
   
   <test  name="Test Blocks Practise- Block 2" verbose="2" thread-count ="4" parallel ="methods">
     <parameter name = "browser" value="chrome"/>
-    <parameter name = "urlRegister" value="https://demo.opencart.com/index.php?route=account/register"/>
+    <parameter name = "urlRegister" value="https://tutorialsninja.com/demo/index.php?route=account/register"/>
     <classes>
       <class name="com.tests.SignUpPageTest"/>
     </classes>

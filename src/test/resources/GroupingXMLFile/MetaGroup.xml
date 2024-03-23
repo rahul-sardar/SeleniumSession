@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="GroupTestExample">
+
+	<test name="Test Blocks Practise- LoginTest" verbose="2">
+		<groups>
+			<define name='smokeandregression'>
+				<include name="Regression" />
+				<include name='smoke' />
+			</define>
+			<define name='smokeandsanity'>
+				<include name="sanity" />
+				<include name='smoke' />
+			</define>
+			<define name='allTests'>
+				<include name="all" />
+			</define>
+			<run>
+				<include name="smokeandregression" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.groupingExample.DemoLogin" />
+
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- RegisterTest" verbose="2">
+		<groups>
+			<run>
+				<include name="smoke" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.qa.groupingExample.DemoRegister" />
+		</classes>
+	</test>
+
+	<test name="Test Blocks Practise- SearchTest" verbose="2">
+		<classes>
+			<class name="com.qa.groupingExample.DemoSearch" />
+		</classes>
+	</test>
+
+</suite>
+
+<!-- Meta Groups mean group of group. Meta groups not supported at suite 
+	level. Need to ba created at test tag level -->
+<!-- Here OR logic should be applied when coming to groups, In above example if we try to run smokeandsanity run then group which contains sanity or smoke would be running.   -->

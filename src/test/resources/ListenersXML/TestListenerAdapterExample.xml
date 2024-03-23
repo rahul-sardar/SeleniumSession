@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="Listeners Example">
+	<listeners>
+		<listener class-name="com.listeners.example.TestListenerAdapterClassExample" />
+	</listeners>
+
+
+	<test name="RegisterTest">
+		<classes>
+			<class name="com.listeners.example.RegisterCheckingListeners" />
+		</classes>
+	</test>
+
+	<test name="LoginTest">
+		<classes>
+			<class name="com.listeners.example.LoginTestCheckingListener" />
+		</classes>
+	</test>
+
+	
+
+
+</suite>
